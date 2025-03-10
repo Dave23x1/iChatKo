@@ -14,7 +14,7 @@ const useNavigation = () => {
         active: pathname === "/conversations",
       },
       {
-        label: "friends",
+        label: "Friends",
         href: "/friends",
         icon: Users,
         active: pathname === "/friends",

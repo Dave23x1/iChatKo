@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "@/components/ui/card"; // Use named import
+import { Card } from "@/components/ui/card";
 import useNavigation from "@/hooks/useNavigation";
 import { UserButton } from "@clerk/nextjs";
 import {
@@ -9,7 +9,7 @@ import {
   TooltipContent,
 } from "@radix-ui/react-tooltip";
 import Link from "next/link";
-import { Button } from "@/components/ui/button"; // Ensure this path is correct
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 function DesktopNav() {
@@ -22,22 +22,23 @@ function DesktopNav() {
           {path.map((path, id) => {
             return (
               <li key={id} className="relative">
-                <Link href={path.href}>
-                  <Tooltip>
-                    <TooltipTrigger asChild={true}>
-                      <Button
-                        size="icon"
-                        variant={path.active ? "default" : "outline"}
-                      >
-                        {React.createElement(path.icon)}
-                      </Button>
-                    </TooltipTrigger>
-
-                    <TooltipContent>
-                      <p>{path.label}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </Link>
+                <Tooltip>
+                  <TooltipTrigger asChild={true}>
+                    <span>
+                      <Link href={path.href} passHref>
+                        <Button
+                          size="icon"
+                          variant={path.active ? "default" : "outline"}
+                        >
+                          {path.icon && <path.icon />}{" "}
+                        </Button>
+                      </Link>
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{path.label}</p>
+                  </TooltipContent>
+                </Tooltip>
               </li>
             );
           })}

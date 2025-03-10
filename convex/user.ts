@@ -18,7 +18,7 @@ export const get = internalQuery({
   async handler(ctx, args) {
     return ctx.db
       .query("users")
-      .withIndex("by_clerkId", (q) => q.eq("clerkId", args.clerkId)) // Fix: Remove array brackets
+      .withIndex("by_clerkId", (q) => q.eq("clerkId", args.clerkId))
       .unique();
   },
 });

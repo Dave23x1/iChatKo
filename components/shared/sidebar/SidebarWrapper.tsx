@@ -1,6 +1,6 @@
 import React from "react";
 import DesktopNav from "../sidebar/nav/DesktopNav";
-type Props = React.PropsWithChildren<{}>;
+type Props = React.PropsWithChildren<object>;
 
 const SidebarWrapper = ({ children }: Props) => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 
-type Props = {};
+type Props = object;
 
-const ConversationsPage = ({ ConversationsPage }: Props) => {
+const ConversationsPage: React.FC<Props> = () => {
   return <div>ConversationsPage</div>;
 };
 

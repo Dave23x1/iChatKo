@@ -1,6 +1,8 @@
+"use client"
+
 import React from "react";
 
-type Props = object;
+type Props = [];
 
 const ConversationsPage: React.FC<Props> = () => {
   return <div>ConversationsPage</div>;
